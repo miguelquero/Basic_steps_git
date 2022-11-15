@@ -72,6 +72,24 @@ Con "log" podemos ver el historial de commit, o envios, que se ha realizado:
 * Fecha
 * Comentario
 
+Para volver una versión atras (commit) se necesitan las iniciales del identificador del commit que nos interesa y correr:
+>$ git checkout bd59...
+  
+Hay que recordar que **HEAD** es el puntero al último commit. Pero ahora estaremos en el directorio del commit anterior. Para volver al último commit y volver al **HEAD** se usa:
+>$ git checkout master
+Siendo master el nombre de la rama.  
+
+Para volver al punto inicial manteniendo todos los cambios, pero sin commit se usa:
+>$ git reset bd59...
+  
+Se puede hacer este mismo reset pero perdiendo todos los cambios que existan en commits superiores al del identificador que estás poniendo. Solo hay que poner la etiqueta **--hard**.
+
+---
+## Recuperar archivos borrados
+Si eliminamos un archivo del directorio y luego nos arrepentimos hay que usar:
+>$ git restore file.html
+
+
 ---
 ## Del local al remoto (PUSH)
 El último paso es subir los ficheros presentes en el repositorio local al remoto a modo de seguridad o para poder compartir los avances con nuestros compañeros. Esto se realiza con un único comando:
